@@ -1,12 +1,19 @@
 #!/usr/bin/env node
 
-const program = require('commander');
-const package = require('../package.json');
+// const program = require('commander');
+// const inquirer = require('inquirer');
+// const package = require('../package.json');
 
-console.log(package.version);
+import { program } from "commander";
+import inquirer from 'inquirer';
+import fs from 'fs';
+const packageData = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+// import * as packageData from '../package.json';
+
+console.log(packageData.version);
 
 program
-  .version(package.version)
+  .version(packageData.version)
   .command('create <projectName>')
   .description('create a new project')
   .alias('c')
@@ -23,3 +30,5 @@ program.parse(process.argv)
 // https://juejin.cn/post/6979511969736818701
 
 // https://juejin.cn/post/6911987404039520270#heading-11
+
+// https://blog.csdn.net/ZhaoQM_script/article/details/120631231

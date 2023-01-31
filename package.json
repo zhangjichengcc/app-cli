@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "description": "create app cli",
   "bin": {
-    "create-app": "bin/create-app.js"
+    "app-cli": "bin/create-app.js"
   },
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/zhangjichengcc/create-app#readme",
   "dependencies": {
-    "commander": "^10.0.0"
+    "commander": "^10.0.0",
+    "inquirer": "^9.1.4"
   }
 }

@@ -1,0 +1,30 @@
+{
+  "name": "create-app",
+  "version": "0.0.1",
+  "description": "create app cli",
+  "bin": {
+    "create-app": "bin/create-app.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangjichengcc/create-app.git"
+  },
+  "keywords": [
+    "cli",
+    "app",
+    "create-app"
+  ],
+  "author": "zhangjicheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhangjichengcc/create-app/issues"
+  },
+  "homepage": "https://github.com/zhangjichengcc/create-app#readme",
+  "dependencies": {
+    "commander": "^10.0.0"
+  }
+}

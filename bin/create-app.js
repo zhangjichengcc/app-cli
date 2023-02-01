@@ -15,7 +15,7 @@ console.log(packageData.version);
 
 const templateList = {
   Vue: 'git@github.com:zhangjichengcc/create-app.git',
-  React: 'git@github.com:zhangjichengcc/create-app.git',
+  React: 'git@github.com:zhangjichengcc/create-ap.git',
   gitbook: 'git@github.com:zhangjichengcc/create-app.git',
   docsify: 'git@github.com:zhangjichengcc/create-app.git',
 }
@@ -45,7 +45,7 @@ function downloadProject(downLoadURL, target) {
       // { clone: true },
       function (err) {
         if (err) {
-          spinner.fail();
+          spinner.fail('模板下载失败');
           if (err.toString().includes("status 128")) {
             console.log('\n', logSymbols.warning, chalk.yellow("Git默认开启了SSL验证，请尝试执行下面命令，关闭验证后再重试；"))
             console.log(logSymbols.info, chalk.green("git config --global http.sslVerify false"))
@@ -86,7 +86,7 @@ function initProject() {
     downloadProject(downLoadURL, projectName).then(() => {
       console.log('\n', logSymbols.success, chalk.green('项目初始化完成'));
     }).catch(err => {
-      console.log('\n', logSymbols.error, chalk.red(`模板下载失败`), '\n', chalk.yellow(`失败原因：${err}`), '\n', `请尝试直接下载模板：git clone ${downLoadURL}`)
+      console.log('\n', logSymbols.info, chalk.yellow(`失败原因：${err}`), '\n', `请尝试直接下载模板：git clone ${downLoadURL}`);
     })
   })
 }

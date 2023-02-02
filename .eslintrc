@@ -1,7 +1,7 @@
 {
   "env": {
-    "browser": true,
-    "es2021": true
+    "node": true,
+    "commonjs": true
   },
   "extends": ["plugin:@typescript-eslint/recommended", "eslint:recommended"],
   "overrides": [],
@@ -17,6 +17,7 @@
     "process": true
   },
   "rules": {
-    "@typescript-eslint/no-unused-vars": [2] // 使用typescript-eslint 替换 eslint 的 no-unused-vars 规避定义ts类型时报参数未使用的错误
+    "@typescript-eslint/no-unused-vars": [2], // 使用typescript-eslint 替换 eslint 的 no-unused-vars 规避定义ts类型时报参数未使用的错误
+    "@typescript-eslint/no-inferrable-types": 0
   }
 }

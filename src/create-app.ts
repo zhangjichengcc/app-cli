@@ -3,7 +3,6 @@
 import { program } from "commander";
 import inquirer from "inquirer";
 import chalk from "chalk";
-// import fs from "fs";
 import ora from "ora";
 import logSymbols from "log-symbols";
 import download from "download-git-repo";
@@ -126,9 +125,3 @@ program
   });
 
 program.parse(process.argv);
-
-// https://juejin.cn/post/6979511969736818701
-
-// https://juejin.cn/post/6911987404039520270#heading-11
-
-// https://blog.csdn.net/ZhaoQM_script/article/details/120631231

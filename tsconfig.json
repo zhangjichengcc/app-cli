@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./lib/",
     "noImplicitAny": true,
-    "module": "ES2015",
+    "module": "ESNext",
     "target": "ES6",
     // "lib": [ "dom", "es5", "es2015.promise" ,"es2015", "es2017", "ES2020"],
     "sourceMap": true, // 调试 ts 源码

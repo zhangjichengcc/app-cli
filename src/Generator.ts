@@ -1,16 +1,34 @@
-import { program } from "commander";
-import inquirer from "inquirer";
+// import { program } from "commander";
+import inquirer, { QuestionCollection } from "inquirer";
 import chalk from "chalk";
 import ora from "ora";
 import logSymbols from "log-symbols";
 import download from "download-git-repo";
 import { spawnSync } from "child_process";
-import packageData from "../package.json";
+// import packageData from "../package.json";
+
+export interface GenerateConstructor {
+  name: string;
+}
 
 class Generator {
-  constructor(opts) {
-    this.opts = opts;
-    this.name = basename(opts.env.cwd);
+  /** 项目名【文件名】 */
+  readonly name: string;
+  public prompts: {[key: string]: string};
+  public githubRepo: string;
+  
+  constructor(opts: GenerateConstructor) {
+    this.name = opts.name;
+    this.prompts = {};
+    this.githubRepo = '';
+  }
+
+  prompting() {
+    this.prompts = {}
+  }
+
+  prompt(prompts: QuestionCollection) {
+    return inquirer.prompt(prompts)
   }
 
   /**
@@ -63,6 +81,12 @@ class Generator {
       });
     });
   }
+
+  async run() {
+    await this.prompting();
+    this.downloadProject(this.githubRepo, this.name);
+  }
+
 }
 
 export default Generator;

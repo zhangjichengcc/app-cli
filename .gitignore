@@ -1,4 +1,4 @@
 node_modules
-/lib/*/lib
-/lib/*/build
-/lib/*/dist
+/lib/**/lib
+/lib/**/build
+/lib/**/dist

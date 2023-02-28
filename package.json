@@ -3,15 +3,18 @@
   "version": "0.0.1",
   "description": "create app cli",
   "bin": {
-    "app-cli": "bin/create-app.js"
+    "app-cli": "lib/cli.js"
   },
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript",
-    "test": "esno ./src/create-app",
-    "start": "node ./bin/create-app"
+    "test": "node lib/cli.js",
+    "prettier": "prettier -c --write '**/*'"
   },
+  "files": [
+    "cli.js",
+    "index.js",
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhangjichengcc/create-app.git"
@@ -21,7 +24,9 @@
     "app",
     "create-app"
   ],
-  "author": "zhangjicheng",
+  "authors": [
+    "zhangjicheng <zhangjichengcc@163.com> (https://github.com/zhangjichengcc)"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zhangjichengcc/create-app/issues"
@@ -34,27 +39,6 @@
     "ora": "^6.1.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.6",
-    "@babel/preset-env": "^7.18.6",
-    "@rollup/plugin-alias": "^4.0.3",
-    "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^24.0.1",
-    "@rollup/plugin-eslint": "^9.0.3",
-    "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-terser": "^0.4.0",
-    "@rollup/plugin-typescript": "^11.0.0",
-    "@types/inquirer": "^9.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "@typescript-eslint/parser": "^5.50.0",
-    "eslint": "^8.33.0",
-    "esno": "^0.16.3",
-    "rollup-plugin-filesize": "^9.1.2",
-    "rollup-plugin-node-polyfills": "^0.2.1",
-    "rollup-plugin-typescript2": "^0.32.1",
-    "ts-node": "^10.9.1",
-    "ttypescript": "^1.5.15",
-    "typescript": "^4.9.5",
-    "typescript-transform-paths": "^3.4.6"
+    "eslint": "^8.33.0"
   }
 }

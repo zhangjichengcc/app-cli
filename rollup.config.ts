@@ -2,7 +2,7 @@
  * @Author: zhangjicheng
  * @Date: 2022-07-11 11:42:43
  * @LastEditors: zhangjicheng
- * @LastEditTime: 2023-02-27 11:26:46
+ * @LastEditTime: 2023-02-28 15:18:08
  * @FilePath: /create-app/rollup.config.ts
  */
 import type { RollupOptions } from "rollup";
@@ -29,7 +29,7 @@ const plugins: RollupOptions['plugins'] = [
     typescript: ttypescript,
   }),
   filesize(),
-  terser(),
+  // terser(),
   eslint({
     throwOnError: true,
     include: ["src/**/*.ts"],

@@ -5,20 +5,33 @@ import ora from "ora";
 import logSymbols from "log-symbols";
 import download from "download-git-repo";
 import { spawnSync } from "child_process";
+import fs from 'node:fs';
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 // import packageData from "../package.json";
 
 export interface GenerateConstructor {
   name: string;
+  type: string;
 }
 
 class Generator {
   /** 项目名【文件名】 */
   readonly name: string;
+  /** 打包工具名 */
+  readonly type: string;
+
   public prompts: {[key: string]: string};
   public githubRepo: string;
   
   constructor(opts: GenerateConstructor) {
     this.name = opts.name;
+    this.type = opts.type;
     this.prompts = {};
     this.githubRepo = '';
   }
@@ -82,9 +95,44 @@ class Generator {
     });
   }
 
+  /**
+   * @description: 获取模板类型
+   * @param {string} generatorType
+   * @return {*}
+   */  
+  getTemplateType(generatorType: string) {
+    const templates = fs
+      .readdirSync(`${__dirname}/generators/${generatorType}/packages`)
+      .filter((f) => !f.startsWith('.'))
+      .map((f) => {
+        return {
+          name: `${f.padEnd(15)} - ${chalk.gray(require(`./generators/${generatorType}/packages/${f}/meta.json`).description)}`,
+          value: f,
+          short: f,
+        };
+      });
+    return new Promise(function(resolve) {
+      inquirer.prompt([
+        {
+          name: 'template',
+          message: `What's your plugin used for?`,
+          type: 'list',
+          choices: templates
+        }
+      ]).then(function(args) {
+        const { template } = args;
+        resolve(template);
+      })
+    })
+  }
+
   async run() {
+    
+    const template = await this.getTemplateType(this.type);
     await this.prompting();
-    this.downloadProject(this.githubRepo, this.name);
+
+    console.log(this.prompts, template, this.name, this.type)
+    // this.downloadProject(this.githubRepo, this.name);
   }
 
 }

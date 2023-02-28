@@ -10,7 +10,7 @@
   "scripts": {
     "build": "rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "test": "esno ./src/create-app",
-    "start": "node --experimental-specifier-resolution=node --loader ts-node/esm ./src/create-app"
+    "start": "node ./bin/create-app"
   },
   "repository": {
     "type": "git",
@@ -54,6 +54,7 @@
     "rollup-plugin-typescript2": "^0.32.1",
     "ts-node": "^10.9.1",
     "ttypescript": "^1.5.15",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "typescript-transform-paths": "^3.4.6"
   }
 }

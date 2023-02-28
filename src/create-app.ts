@@ -2,7 +2,6 @@
 
 import { Command } from "commander";
 import inquirer from "inquirer";
-// import inquirer from "inquirer";
 import chalk from "chalk";
 // import ora from "ora";
 // import logSymbols from "log-symbols";
@@ -37,8 +36,8 @@ const generators = fs
 // const packageData = JSON.parse(fs.readFileSync('package.json', 'utf8'))
 
 /**
- * 初始化项目，获取项目名称
- * @returns appName
+ * @description: 初始化项目，设置命令提示，获取项目名称
+ * @return {string}
  */
 function init(): Promise<string> {
 
@@ -59,56 +58,52 @@ function init(): Promise<string> {
 }
 
 /**
- * 获取 app 类型
- * @returns type
+ * @description: 获取项目打包工具类型
+ * @return {string} 工具类型
  */
-function getAppType() {
-  return new Promise(function(resolve) {
-    inquirer.prompt([
-      {
-        name: 'type',
-        message: 'Select the boilerplate type',
-        type: 'list',
-        choices: generators
-      }
-    ]).then(function(args) {
-      const { type } = args;
-      resolve(type);
-    })
-  })
+function getAppType(): Promise<string> {
+ return new Promise(function(resolve) {
+   inquirer.prompt([
+     {
+       name: 'type',
+       message: 'Select the Packaging tool type',
+       type: 'list',
+       choices: generators
+     }
+   ]).then(function(args) {
+     const { type } = args;
+     resolve(type);
+   })
+ })
 }
-
 
 /**
  * @description: 执行构造器函数
- * @param {*} generatorPath 构造器路径
- * @param {*} name 项目名
+ * @param {string} generatorPath 构造器路径
+ * @param {string} name 项目名
  * @return {*}
  */
-async function runGenerator(generatorPath: string, name: string) {
-  const {default: Generator} = await import(generatorPath);
-  const generator = new Generator(name);
+async function runGenerator(generatorPath: string, name: string, type: string) {
+  const { default: Generator } = await import(generatorPath);
+  const generator = new Generator({name, type});
   return generator.run(() => {
     if (name) {
-      if (process.platform !== `linux` || process.env.DISPLAY) {
+      // if (process.platform !== `linux` || process.env.DISPLAY) {
         // clipboardy.writeSync(`cd ${name}`);
         console.log('📋 Copied to clipboard, just use Ctrl+V');
-      }
+      // }
     }
     console.log('✨ File Generate Done');
     // resolve(true);
   });
 }
 
-
-
 async function run() {
-
   const name = await init();
   const type = await getAppType();
 
   try {
-    return runGenerator(`./generators/${type}`, name);
+    return runGenerator(`./generators/${type}`, name, type);
   } catch (e) {
     console.error(chalk.red(`> Generate failed`), e);
     process.exit(1);

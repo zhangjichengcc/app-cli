@@ -1,2 +1,4 @@
-bin
 node_modules
+/lib/*/lib
+/lib/*/build
+/lib/*/dist

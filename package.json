@@ -6,6 +6,9 @@
     "app-cli": "lib/cli.js"
   },
   "type": "module",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "test": "node lib/cli.js",
     "prettier": "prettier -c --write '**/*'"
@@ -40,6 +43,7 @@
     "ora": "^6.1.2"
   },
   "devDependencies": {
-    "eslint": "^8.33.0"
+    "eslint": "^8.35.0",
+    "eslint-plugin-node": "^11.1.0"
   }
 }

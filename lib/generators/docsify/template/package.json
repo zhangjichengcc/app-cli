@@ -1,0 +1,25 @@
+{
+  "name": "my-docs",
+  "version": "1.0.0",
+  "description": "zhangjicheng 's docs",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "docsify serve --open",
+    "publish": "docsify serve --port 8060",
+    "commit": "node ./node_modules/cz-customizable/standalone.js"
+  },
+  "keywords": [
+    "docs"
+  ],
+  "author": "zhangjicheng",
+  "license": "ISC",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "devDependencies": {
+    "cz-customizable": "^7.0.0"
+  }
+}

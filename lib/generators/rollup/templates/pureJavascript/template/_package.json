@@ -1,7 +1,7 @@
 {
-  "name": "@app-cli/rollup",
-  "version": "1.0.0",
-  "description": "app-cli rollup模板",
+  "name": "<%= name %>",
+  "version": "<%= version %>",
+  "description": "<%= description %>",
   "main": "lib/main.cjs.js",
   "module": "lib/main.esm.js",
   "jsnext:main": "lib/main.esm.js",
@@ -29,7 +29,7 @@
     "@app-cli",
     "template"
   ],
-  "author": "zhangjicheng",
+  "author": "<%= author %> <<%= mail %>>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zhangjichengcc/app-cli_rollup/issues"

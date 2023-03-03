@@ -88,7 +88,7 @@ async function ejsTest() {
   debugger
 }
 
-ejsTest()
+// ejsTest()
 
 
 // copyDirSync('./lib/generators/rollup/templates/pureJavascript/template', './test').then(function() {
@@ -96,3 +96,19 @@ ejsTest()
 // });
 // spinner.spinner();
 // runSpinner()
+
+async function f1() {
+  await sleep(1000);
+  // return Promise.reject('555');
+  throw new Error('666');
+}
+
+async function run() {
+  try {
+    await f1()
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+run()

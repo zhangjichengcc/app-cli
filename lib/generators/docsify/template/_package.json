@@ -4,10 +4,7 @@
   "description": "<%= description %>",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "docsify serve --open",
-    "publish": "docsify serve --port 8060",
-    "commit": "node ./node_modules/cz-customizable/standalone.js"
+    "start": "docsify serve --open"
   },
   "keywords": [
     "docs"

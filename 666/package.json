@@ -1,0 +1,14 @@
+{
+  "name": "666",
+  "version": "v0.0.1",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "docsify serve --open"
+  },
+  "keywords": [
+    "docs"
+  ],
+  "author": " <>",
+  "license": "ISC"
+}

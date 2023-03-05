@@ -1,0 +1,30 @@
+MD024:
+  # 默认为false，设为true时，不同标题下的子标题内容可以重复
+  siblings_only: true
+
+MD013:
+  # 代码行的最大长度，按实际情况调整
+  code_block_line_length: 500
+  # 行的最大长度
+  line_length: 1000
+
+# 文档中不允许使用HTML语句
+MD033: false
+
+# 图片必须加alt
+MD045: false
+
+MD042: false
+
+MD014: false
+
+MD029: false
+
+MD041: false
+
+MD036: false
+
+MD051: false
+
+# 无空格-区块引用
+MD028: false

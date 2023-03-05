@@ -11,5 +11,8 @@
     "docs"
   ],
   "author": "zhangjicheng",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "markdownlint": "^0.27.0"
+  }
 }

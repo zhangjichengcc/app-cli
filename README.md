@@ -15,10 +15,12 @@
 
 ## how to use
 
-``` bash
-npm install create-app -g
+``` shell
+# 全局安装 create-app
+$ npm install create-app -g
 
-app-cli init
+# 创建项目
+$ app-cli init <app-name>
 ```
 
 ## 参考文献

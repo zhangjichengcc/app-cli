@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useRef} from 'react';
+import {FC, useEffect, useRef} from 'react';
 import { createPortal } from 'react-dom';
 
 const PopOver: FC = () => {

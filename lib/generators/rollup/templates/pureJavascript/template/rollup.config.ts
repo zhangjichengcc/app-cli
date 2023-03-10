@@ -2,23 +2,24 @@ import type { RollupOptions } from "rollup";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import ttypescript from 'ttypescript'; 
+import clear from 'rollup-plugin-clear';
 import commonjs from "@rollup/plugin-commonjs";
 import { createRequire } from "node:module";
-// import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 const require = createRequire(import.meta.url);
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
 const pkg = require("./package.json");
 path.resolve();
 
 const plugins: RollupOptions["plugins"] = [
+  clear({
+    targets: ['./lib']
+  }),
   nodeResolve(),
   commonjs(),
   typescript({ 
     typescript: ttypescript,
-    declarationDir: "./declare",
+    declarationDir: "lib/declare",
   })
 ];
 
@@ -28,12 +29,19 @@ const config: RollupOptions = {
   external: Object.keys(pkg.dependencies),
   output: [
     {
-      file: pkg.main,
+      preserveModules: true,
+      chunkFileNames: 'es/[name]-[hash].js',
+      entryFileNames: 'es/[name].js',
+      dir: 'lib',
       format: "es",
       exports: "auto",
     },
     {
-      file: pkg.module,
+      preserveModules: true,
+      chunkFileNames: 'cjs/[name]-[hash].js',
+      entryFileNames: 'cjs/[name].js',
+      dir: 'lib',
+      // file: pkg.module,
       format: "cjs",
       exports: "auto",
     },

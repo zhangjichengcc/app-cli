@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhangjichengcc/app-cli_rollup.git"
+    "url": "git+https://github.com/zhangjichengcc/app-cli.git"
   },
   "keywords": [
     "rollup",
@@ -32,9 +32,9 @@
   "author": "<%= author %> <<%= mail %>>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zhangjichengcc/app-cli_rollup/issues"
+    "url": "https://github.com/zhangjichengcc/app-cli/issues"
   },
-  "homepage": "https://github.com/zhangjichengcc/app-cli_rollup#readme",
+  "homepage": "https://github.com/zhangjichengcc/app-cli#readme",
   "devDependencies": {
     "@rollup/plugin-alias": "^4.0.3",
     "@rollup/plugin-commonjs": "^24.0.1",

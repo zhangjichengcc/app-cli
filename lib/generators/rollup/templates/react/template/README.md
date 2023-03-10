@@ -20,7 +20,7 @@ $ pnpm link <packageName> # 引入依赖包
 
 在我们做组件开发时，若当前组件与引用的项目都是用了相同的**核心依赖**，则会出现项目中引用了两次相同依赖的问题【关心第三点】
 
-``` bash
+``` plain
 Uncaught Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
 1. You might have mismatching versions of React and the renderer (such as React DOM)
 2. You might be breaking the Rules of Hooks
@@ -69,6 +69,7 @@ $ pnpm list
 > react-dom link: /Users/name/workSpace/project/reactDemo/node_modules/react-dom
 
 $ pnpm unlink /Users/name/workSpace/project/reactDemo/node_modules/react
+
 $ pnpm unlink /Users/name/workSpace/project/reactDemo/node_modules/react-dom
 
 ```

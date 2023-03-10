@@ -1,7 +1,7 @@
 {
-  "name": "react-plugin",
-  "version": "0.0.1",
-  "description": "a react plugin",
+  "name": "<%= name %>",
+  "version": "<%= version %>",
+  "description": "<%= description %>",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "jsnext:main": "dist/src/index.js",
@@ -15,7 +15,7 @@
     "package.json",
     "README.md"
   ],
-  "author": "zhangjicheng",
+  "author": "<%= author %> <<%= mail %>>",
   "license": "ISC",
   "peerDependencies": {
     "react": ">=16.9.0",

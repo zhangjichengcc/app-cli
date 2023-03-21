@@ -15,7 +15,7 @@
 
 ## how to use
 
-``` shell
+``` bash
 # 全局安装 create-app
 $ npm install create-app -g
 

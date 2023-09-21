@@ -1,0 +1,27 @@
+.large() {
+  font-size: 24px;
+}
+
+.default() {
+  font-size: 20px;
+}
+
+.small() {
+  font-size: 16px;
+}
+
+.button {
+  font-size: 20px;
+  font-weight: bold;
+  background: #f00;
+  color: #333;
+  &.large {
+    .large();
+  }
+  &.small {
+    .small();
+  }
+  &.default {
+    .default();
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "@zhangjicheng/app-cli",
-  "version": "v0.0.1_Alpha",
+  "version": "v0.0.1-Alpha",
   "description": "create app cli",
   "bin": {
     "app-cli": "cli.js"
